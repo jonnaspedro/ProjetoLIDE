@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto LIDE - Clube de Leitura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+    header {
+      background-color: #28527A;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 60px;
+      margin-right: 10px;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    nav a {
+      background-color: #f6ae2d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #28527A;
+      font-weight: 700;
+    }
+
+    nav a:hover{
+    color: #f8fdf8;
+    transform: scale(1.1);
+    transition: all 0.45s ease;
+}
+
+a:hover{
+    color: #d3f5da;
+    transition: 0.3s all;
+}
+
+
+    .btn-sobre {
+      background-color: #f6ae2d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #28527A;
+      font-weight: 700;
+    }
+
+    .btn-grupo{
+      background-color: #f6ae2d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #28527A;
+      font-weight: 700;
+    }
+
+    .hero {
+      background-color: #28527A;
+      padding: 50px 20px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #f6ae2d;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .content h2 {
+      color: #28527A;
+      margin-top: 30px;
+    }
+    .content ul {
+      padding-left: 20px;
+    }
+    .highlight {
+      background: linear-gradient(to right, #28527A, #f6ae2d);
+      border-left: 5px solid #28527A;
+      padding: 15px;
+      margin-top: 30px;
+      font-weight: 700;
+      color: #28527A;
+    }
+    .img-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .img-row img {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="imagens/logo.svg" alt="Logo LIDE" style="height:70px;">
+      <h1 style="color:white; font-size: 25px; margin: 0;">Livro, Diálogo e Educação</h1>
+    </div>
+   <nav>
+      <a href="index.html">Início</a>
+      <a class="btn-sobre" href="pagina2.html">Sobre Nós</a>
+      <a href="pagina3.html">Indicações</a>
+      <a href="materiais.html">Materiais</a>
+      <a class="btn-grupo" href="pagina5.html">Monte Seu Clube de Leitura</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="texto" style="text-align: center;"></div>
+        <h1>Indicações!</h1>
+        <p style="text-align: center;">
+        Não sabe por onde começar? A gente te ajuda! Aqui estão sugestões 
+        de livros para diferentes faixas etárias, gêneros e estilos. Seja 
+        para iniciar debates profundos ou apenas curtir uma boa história 
+        juntos, tem uma leitura certa para o seu grupo.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="container-indicacoes">
+
+  <div class="coluna">
+    <h2 class="h2-1">Leitura por faixa etária</h2>
+
+    <h3 class="h3-1">Crianças (6 - 12 anos)</h3>
+    <div class="listaindica">
+      <ul>
+        <li>O Pequeno Príncipe – Antoine de Saint-Exupéry</li>
+        <li>Diário de um Banana – Jeff Kinney</li>
+        <li>A Culpa é das Estrelas – John Green</li>
+      </ul>
+    </div>
+
+    <h3 class="h3-1">Adolescentes (13–17 anos)</h3>
+    <div class="listaindica">
+      <ul>
+        <li>Extraordinário – R. J. Palacio</li>
+        <li>Harry Potter e a Pedra Filosofal – J.K. Rowling</li>
+        <li>O Menino Maluquinho – Ziraldo</li>
+      </ul>
+    </div>
+
+    <h3 class="h3-1">Jovens e adultos (18+ anos)</h3>
+    <div class="listaindica">
+      <ul>
+        <li>1984 – George Orwell</li>
+        <li>Pequeno Manual Antirracista – Djamila Ribeiro</li>
+        <li>O Sol é Para Todos – Harper Lee</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="coluna">
+    <h2 class="h2-1">Gêneros literários</h2>
+
+    <h3 class="h3-1">Fantasia</h3>
+    <div class="listaindica">
+      <ul>
+        <li>Coraline – Neil Gaiman</li>
+        <li>O Hobbit – J. R. R. Tolkien</li>
+      </ul>
+    </div>
+
+    <h3 class="h3-1">Romance</h3>
+    <div class="listaindica">
+      <ul>
+        <li>Como Eu Era Antes de Você – Jojo Moyes</li>
+        <li>Dom Casmurro – Machado de Assis</li>
+      </ul>
+    </div>
+
+    <h3 class="h3-1">Mistério/Suspense</h3>
+    <div class="listaindica">
+      <ul>
+        <li>Assassinato no Expresso do Oriente – Agatha Christie</li>
+        <li>Garota Exemplar – Gillian Flynn</li>
+      </ul>
+    </div>
+
+    <h3 class="h3-1">Clássicos brasileiros</h3>
+    <div class="listaindica">
+      <ul>
+        <li>Capitães da Areia – Jorge Amado</li>
+        <li>O Auto da Compadecida – Ariano Suassuna</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="coluna">
+    <h2 class="h2-1">Temas centrais</h2>
+
+    <h3 class="h3-1">Diversidade e inclusão</h3>
+    <div class="listaindica">
+      <ul>
+        <li>Pequeno Manual Antirracista – Djamila Ribeiro</li>
+        <li>Extraordinário – R. J. Palacio</li>
+      </ul>
+    </div>
+
+    <h3 class="h3-1">Amizade e empatia</h3>
+    <div class="listaindica">
+      <ul>
+        <li>O Pequeno Príncipe – Antoine de Saint-Exupéry</li>
+        <li>O Menino Maluquinho – Ziraldo</li>
+      </ul>
+    </div>
+
+    <h3 class="h3-1">Crítica social</h3>
+    <div class="listaindica">
+      <ul>
+        <li>1984 – George Orwell</li>
+        <li>Capitães da Areia – Jorge Amado</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<h2 style="
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #28527A;
+            text-align: center;">Encontre o livro ideal para você!</h2>
+
+ <p style="
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #28527A;
+            text-align: center;
+            font-size: 20px;">Use os filtros abaixo para descobrir indicações personalizadas de leitura, de acordo com sua faixa etária, gênero favorito e tema que mais te inspira.
+                            Torne sua experiência literária ainda mais especial com sugestões feitas sob medida!
+
+</p>
+
+
+<div class="container-filtro">
+  <h1 style="color: #f6ae2d;">Filtrar Livros</h1>
+
+  <div class="filtros-container">
+    <label class="filtros">Faixa Etária:
+      <select id="faixaEtaria">
+        <option value="">Todos</option>
+        <option value="infantil">Infantil</option>
+        <option value="adolescente">Adolescente</option>
+        <option value="adulto">Adulto</option>
+        <option value="todas">Livre para todos</option>
+      </select>
+    </label>
+
+    <label class="filtros">Gênero Literário:
+      <select id="genero">
+        <option value="">Todos</option>
+        <option value="drama">Drama</option>
+        <option value="romance">Romance</option>
+        <option value="ficcao">Ficção</option>
+        <option value="aventura">Aventura</option>
+      </select>
+    </label>
+
+    <label class="filtros">Tema Central:
+      <select id="tema">
+        <option value="">Todos</option>
+        <option value="empatia">Empatia</option>
+        <option value="amizade">Amizade</option>
+        <option value="reflexao">Reflexão</option>
+        <option value="identidade">Identidade</option>
+      </select>
+    </label>
+
+    <button onclick="aplicarFiltro()">Filtrar</button>
+  </div>
+
+</div>
+
+<div class="resultado" id="resultado"></div>
+
+
+<style>
+  .livro {
+    text-align: left;
+    margin: 20px;
+  }
+
+  .livro.titulo{
+    font-size: large;
+  }
+
+  .livro img.capa {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+
+  .livro img.capa:hover {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .livro img.capa {
+      max-width: 130px;
+    }
+  }
+</style>
+
+
+  <script>
+    const livros = [
+  { 
+    titulo: "Extraordinário", 
+    faixaEtaria: "adolescente", 
+    genero: "drama", 
+    tema: "empatia", 
+    imagem: "imagens/extraordinario.jpg" 
+  },
+  { 
+    titulo: "É Assim Que Acaba", 
+    faixaEtaria: "adulto", 
+    genero: "drama", 
+    tema: "identidade",
+    imagem: "imagens/éassimqueacaba.jpeg" 
+  },
+  { 
+    titulo: "Para Todos os Garotos Que Já Amei", 
+    faixaEtaria: "adolescente", 
+    genero: "romance", 
+    tema: "amizade", 
+    imagem: "imagens/paratodos1.png" 
+  },
+  { 
+    titulo: "Para Todos os Garotos: P.S. Ainda Amo Você", 
+    faixaEtaria: "adoslecente", 
+    genero: "romance", 
+    tema: "amizade", 
+    imagem: "imagens/paratodos2.png" 
+  },
+  { 
+    titulo: "A Bolsa Amarela", 
+    faixaEtaria: "infantil", 
+    genero: "aventura", 
+    tema: "identidade", 
+    imagem: "imagens/bolsaamarela.jpg" 
+  }
+];
+
+    function aplicarFiltro() {
+      const faixa = document.getElementById('faixaEtaria').value;
+      const genero = document.getElementById('genero').value;
+      const tema = document.getElementById('tema').value;
+      const resultado = document.getElementById('resultado');
+      resultado.innerHTML = "";
+
+      const filtrados = livros.filter(livro =>
+        (!faixa || livro.faixaEtaria === faixa || livro.faixaEtaria === "todas") &&
+        (!genero || livro.genero === genero) &&
+        (!tema || livro.tema === tema)
+      );
+
+      if (filtrados.length === 0) {
+        resultado.innerHTML = "<p>Nenhum livro encontrado com esses filtros.</p>";
+      } else {
+        filtrados.forEach(livro => {
+          const div = document.createElement("div");
+          div.className = "livro";
+          div.innerHTML = `
+          <img src="${livro.imagem}" alt="${livro.titulo}" class="capa">
+          <p>${livro.titulo}</p> 
+          `
+          ;
+          resultado.appendChild(div);
+        });
+      }
+    }
+    
+  </script>
+
+<br><br><br><br><br>
+
+
+</body>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <img src="imagens/logo.svg" alt="Logo LIDE" class="footer-logo">
+      <p>Projeto LIDE — Livro, Diálogo e Educação</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contato</h4>
+      <p>Email: <a href="mailto:contato@lide.com">projetolide@contato.com</a></p>
+      <p>Telefone: (81) 99999-0000</p>
+      <p>Instagram: <a href="https://instagram.com/projetolide" target="_blank">@projetolide</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Projeto LIDE. Todos os direitos reservados.</p>
+  </div>
+</footer>
+</html>
+
+

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Criar Clube do Livro</title>
+     <link rel="stylesheet" href="index.css">
+    <style>
+        
+         body {
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+        background-color: #ffffff;
+        color: #333;
+        }
+        
+        header {
+        background-color: #28527A;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        }
+
+        .logo {
+        display: flex;
+        align-items: center;
+        }
+        .logo img {
+        height: 60px;
+        margin-right: 10px;
+        }
+        nav {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        align-items: center;
+        }
+        nav a {
+        background-color: #f6ae2d;
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: #28527A;
+        font-weight: 700;
+        }
+
+        nav a:hover{
+        color: #f8fdf8;
+        transform: scale(1.1);
+        transition: all 0.45s ease;
+        }
+        h1 {
+            color: #28527A;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #28527A;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1e3f5e;
+        }
+        a:hover{
+        color: #28527A;
+        transition: 0.3s all;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+        <div class="logo">
+            <img src="imagens/logo.svg" alt="Logo" style="height: 70px;">
+            <h1 style="color:white; font-size: 25px; margin: 0;">Livro, Diálogo e Educação</h1>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a class="btn-sobre" href="pagina2.html">Sobre Nós</a>
+            <a href="pagina3.html">Indicações</a>
+            <a href="materiais.html">Materiais</a>
+            <a class="btn-grupo" href="pagina5.html">Monte Seu Clube de Leitura</a>
+        </nav>
+</header>
+ <br><br>
+<div class="container-flex" style="display: flex; flex-direction: column; gap: 30px; justify-content: center; align-items: center; max-width: 1200px; margin: 0 auto;">
+    <!-- Formulário de criação de clube -->
+    <section style="width:100%; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px #0002; padding: 28px 24px; margin-bottom: 0;">
+        <h1 style="margin-bottom: 18px; color: #28527A; font-size: 1.5em; text-align:center;">Criar Clube</h1>
+        <form id="formClube" action="clube-criado.html" method="GET">
+            <label for="nome">Nome do Clube</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite o nome do clube" />
+
+            <label for="publico">Faixa etária</label>
+            <select id="publico" name="publico" required>
+                <option value="" disabled selected>Selecione</option>
+                <option>Crianças</option>
+                <option>Adolescentes</option>
+                <option>Jovens</option>
+                <option>Adultos</option>
+                <option>Todas as idades</option>
+            </select>
+
+            <label for="frequencia">Frequência dos Encontros</label>
+            <select id="frequencia" name="frequencia" required>
+                <option value="" disabled selected>Selecione</option>
+                <option>Semanal</option>
+                <option>Quinzenal</option>
+                <option>Mensal</option>
+            </select>
+
+            <label for="descricao">Descrição do Clube</label>
+            <textarea id="descricao" name="descricao" rows="3" placeholder="Conte um pouco sobre o clube..." required></textarea>
+
+            <div style="text-align:center; margin-top:22px;">
+                <button type="submit" style="width: 80%; font-size: 1em;">Criar Clube</button>
+            </div>
+        </form>
+    </section>
+        <br><br>
+    <!-- Lista de clubes criados -->
+    <section id="clubes criados" style="width:100%; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px #0002; padding: 28px 24px; margin-bottom: 0;">
+        <h2 style="color: #28527A; text-align: center; font-size:1.3em;">Clubes Criados</h2>
+        <br><br>
+        <div id="listaClubes" style="margin-top: 18px;">
+            <p style="text-align:center; color: #888;">Nenhum clube criado ainda.</p>
+        </div>
+    </section>
+
+        <br><br>
+
+      <!-- Participantes -->
+        <section id="participantes" style="width:100%; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px #0002; padding: 28px 24px; margin-bottom: 0;">
+        <h2 style="color:#28527A; text-align:center; font-size:1.3em;">Participantes</h2>
+        <br><br>
+        <form id="selecionar-clube-form" style="margin-bottom:16px;">
+            <label for="clube-select" style="font-weight:600;">Selecione o Clube:</label>
+            <select id="clube-select" required style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc; margin-top:5px;">
+                <option value="" disabled selected>Escolha um clube</option>
+            </select>
+        </form>
+        <ul class="participantes-list" id="participantes-list" style="margin-bottom:16px; padding-left:0;"></ul>
+        <form class="adicionar-form" id="adicionar-form" autocomplete="off" style="display:flex; gap:8px; flex-wrap:wrap;">
+            <input type="text" id="participante-nome" placeholder="Nome" required maxlength="40" style="flex:2; min-width:90px;" />
+            <input type="email" id="participante-email" placeholder="E-mail" required maxlength="60" style="flex:2; min-width:120px;" />
+            <button type="submit" class="adicionar-btn" style="flex:1; min-width:90px; background:#28527A; color:#fff; border:none; border-radius:5px; padding:10px 0; cursor:pointer;">Adicionar</button>
+        </form>
+            <br><br>
+         </section>
+</div>
+
+<style>
+    @media (max-width: 1100px) {
+        .container-flex {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 18px;
+        }
+        .container-flex > section {
+            max-width: 98vw !important;
+            min-width: 0 !important;
+        }
+    }
+    /* Deixa os inputs e selects menores e mais elegantes */
+    input, select, textarea {
+        font-size: 1em;
+        padding: 8px 10px;
+        margin-top: 4px;
+        border-radius: 5px;
+        border: 1px solid #b5c7d3;
+        background: #fafdff;
+        box-sizing: border-box;
+        transition: border 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+        border: 1.5px solid #28527A;
+        outline: none;
+        background: #f0f6fa;
+    }
+    label {
+        margin-top: 10px;
+        font-size: 1em;
+        color: #28527A;
+    }
+    button, .adicionar-btn {
+        background: linear-gradient(90deg, #28527A 70%);
+        color: #fff;
+        font-weight: 700;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 0;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+    }
+    button:hover, .adicionar-btn:hover {
+        background: linear-gradient(90deg, #1e3f5e 70%);
+        transform: scale(1.04);
+    }
+    /* Lista de clubes e participantes */
+    #listaClubes > div {
+        border: 1px solid #e0e6ed;
+        margin-bottom: 14px;
+        border-radius: 7px;
+        background: #fafdff;
+        box-shadow: 0 1px 4px #0001;
+        padding: 12px 14px;
+    }
+    #listaClubes h3 {
+        font-size: 1.1em;
+        margin-bottom: 4px;
+    }
+    .participantes-list li {
+        list-style: none;
+        background: #fff;
+        margin-bottom: 8px;
+        border-radius: 5px;
+        padding: 8px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 3px #0001;
+        font-size: 0.98em;
+    }
+    
+</style>
+
+<script>
+        // Função para salvar e exibir clubes criados localmente, mostrando participantes
+        function renderClubes() {
+                const clubes = JSON.parse(localStorage.getItem('clubesCriados') || '[]');
+                const participantesPorClube = JSON.parse(localStorage.getItem('participantesClubePorClube') || '{}');
+                const lista = document.getElementById('listaClubes');
+                if (clubes.length === 0) {
+                        lista.innerHTML = '<p style="text-align:center; color: #888;">Nenhum clube criado ainda.</p>';
+                        return;
+                }
+                lista.innerHTML = clubes.map((clube, idx) => {
+                        const participantes = participantesPorClube[idx] || [];
+                        let participantesHTML = '';
+                        if (participantes.length) {
+                                participantesHTML = `
+                                        <ul style="margin:10px 0 0 0; padding-left:18px;">
+                                                ${participantes.map(p => `<li style="margin-bottom:4px;"><strong>${p.nome}</strong> &lt;${p.email}&gt;</li>`).join('')}
+                                        </ul>
+                                `;
+                        } else {
+                                participantesHTML = `<p style="color:#888; margin:10px 0 0 0;">Nenhum participante adicionado ainda.</p>`;
+                        }
+                        return `
+                                <div>
+                                        <h3 style="margin:0 0 8px 0; color:#28527A;">${clube.nome}</h3>
+                                        <p><strong>Faixa etária:</strong> ${clube.publico}</p>
+                                        <p><strong>Frequência:</strong> ${clube.frequencia}</p>
+                                        <p><strong>Descrição:</strong> ${clube.descricao}</p>
+                                        <div>
+                                                <strong>Participantes:</strong>
+                                                ${participantesHTML}
+                                        </div>
+                                </div>
+                        `;
+                }).join('');
+        }
+
+        // Preenche o select de clubes
+        function renderClubesSelect() {
+            const clubes = JSON.parse(localStorage.getItem('clubesCriados') || '[]');
+            const select = document.getElementById('clube-select');
+            select.innerHTML = '<option value="" disabled selected>Escolha um clube</option>';
+            clubes.forEach((clube, idx) => {
+                const opt = document.createElement('option');
+                opt.value = idx;
+                opt.textContent = clube.nome;
+                select.appendChild(opt);
+            });
+        }
+
+        document.getElementById('formClube').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const publico = document.getElementById('publico').value;
+            const frequencia = document.getElementById('frequencia').value;
+            const descricao = document.getElementById('descricao').value;
+
+            const clubes = JSON.parse(localStorage.getItem('clubesCriados') || '[]');
+            clubes.push({ nome, publico, frequencia, descricao });
+            localStorage.setItem('clubesCriados', JSON.stringify(clubes));
+
+            renderClubes();
+            renderClubesSelect();
+
+            alert('Clube criado com sucesso!');
+            document.getElementById('formClube').reset();
+        });
+
+        // --- Área para remover clubes ---
+        // Cria a área de remoção de clubes
+        function renderRemoverClubeArea() {
+            let area = document.getElementById('remover-clube-area');
+            if (!area) {
+                area = document.createElement('section');
+                area.id = 'remover-clube-area';
+                area.style = "width:1200px; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px #0002; padding: 28px 24px; margin-bottom: 0;"
+                area.innerHTML = `
+                    <h2 style="color:#28527A; text-align:center; font-size:1.3em;">Remover Clube</h2>
+                    <br><br>
+                    <form id="remover-clube-form" style="margin-bottom:16px;">
+                        <label for="remover-clube-select" style="font-weight:600;">Selecione o Clube:</label>
+            
+                        <select id="remover-clube-select" required style="width:100%; padding:10px; border-radius:4px; border:1px solid #ccc; margin-top:5px;">
+                            <option value="" disabled selected>Escolha um clube</option>
+                        </select>
+                        <button type="submit" style="margin-top:16px; width:100%;">Remover Clube</button>
+                    </form>
+                    <br><br>
+                `;
+                // Adiciona a área ao container principal
+                document.querySelector('.container-flex').appendChild(area);
+            }
+            // Preenche o select de clubes para remoção
+            const clubes = JSON.parse(localStorage.getItem('clubesCriados') || '[]');
+            const select = area.querySelector('#remover-clube-select');
+            select.innerHTML = '<option value="" disabled selected>Escolha um clube</option>';
+            clubes.forEach((clube, idx) => {
+                const opt = document.createElement('option');
+                opt.value = idx;
+                opt.textContent = clube.nome;
+                select.appendChild(opt);
+            });
+        }
+
+        // Evento para remover clube
+        document.addEventListener('submit', function(e) {
+            if (e.target && e.target.id === 'remover-clube-form') {
+                e.preventDefault();
+                const select = document.getElementById('remover-clube-select');
+                const idx = select.value;
+                if (idx === "" || idx == null) return;
+                if (!confirm('Tem certeza que deseja remover este clube?')) return;
+                // Remove clube
+                let clubes = JSON.parse(localStorage.getItem('clubesCriados') || '[]');
+                clubes.splice(idx, 1);
+                localStorage.setItem('clubesCriados', JSON.stringify(clubes));
+                // Remove participantes do clube
+                let participantes = JSON.parse(localStorage.getItem('participantesClubePorClube') || '{}');
+                delete participantes[idx];
+                // Reorganiza índices dos participantes
+                const newParticipantes = {};
+                Object.keys(participantes).forEach(key => {
+                    const k = parseInt(key, 10);
+                    if (k < idx) newParticipantes[k] = participantes[k];
+                    else if (k > idx) newParticipantes[k - 1] = participantes[k];
+                });
+                localStorage.setItem('participantesClubePorClube', JSON.stringify(newParticipantes));
+                renderClubes();
+                renderClubesSelect();
+                renderRemoverClubeArea();
+                renderParticipantes();
+                alert('Clube removido com sucesso!');
+            }
+        });
+
+        // Atualiza área de remoção sempre que necessário
+        function atualizarRemoverClubeArea() {
+            renderRemoverClubeArea();
+        }
+
+        // Inicialização da área de remoção
+        atualizarRemoverClubeArea();
+
+        // Participantes - LocalStorage por clube
+        function getParticipantesPorClube(idx) {
+                const all = JSON.parse(localStorage.getItem('participantesClubePorClube') || '{}');
+                return all[idx] || [];
+        }
+        function setParticipantesPorClube(idx, participantes) {
+                const all = JSON.parse(localStorage.getItem('participantesClubePorClube') || '{}');
+                all[idx] = participantes;
+                localStorage.setItem('participantesClubePorClube', JSON.stringify(all));
+        }
+
+        function renderParticipantes() {
+                const select = document.getElementById('clube-select');
+                const idx = select.value;
+                const ul = document.getElementById('participantes-list');
+                if (!idx) {
+                        ul.innerHTML = '<li style="color:#888; text-align:center; list-style:none;">Selecione um clube para ver os participantes.</li>';
+                        return;
+                }
+                const participantes = getParticipantesPorClube(idx);
+                if (!participantes.length) {
+                        ul.innerHTML = '<li style="color:#888; text-align:center; list-style:none;">Nenhum participante adicionado ainda.</li>';
+                        return;
+                }
+                ul.innerHTML = participantes.map((p, i) => `
+                        <li>
+                                <span><strong>${p.nome}</strong> &lt;${p.email}&gt;</span>
+                                <button onclick="removerParticipante(${i})">Remover</button>
+                        </li>
+                `).join('');
+        }
+
+        function removerParticipante(idxParticipante) {
+                const select = document.getElementById('clube-select');
+                const idxClube = select.value;
+                if (!idxClube) return;
+                const participantes = getParticipantesPorClube(idxClube);
+                participantes.splice(idxParticipante, 1);
+                setParticipantesPorClube(idxClube, participantes);
+                renderParticipantes();
+                renderClubes(); // Atualiza lista de clubes para mostrar participantes atualizados
+        }
+        window.removerParticipante = removerParticipante;
+
+        document.getElementById('adicionar-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const select = document.getElementById('clube-select');
+                const idx = select.value;
+                if (!idx) {
+                        alert('Selecione um clube antes de adicionar participantes.');
+                        return;
+                }
+                const nome = document.getElementById('participante-nome').value.trim();
+                const email = document.getElementById('participante-email').value.trim();
+                if (!nome || !email) return;
+                const participantes = getParticipantesPorClube(idx);
+                participantes.push({ nome, email });
+                setParticipantesPorClube(idx, participantes);
+                renderParticipantes();
+                renderClubes(); // Atualiza lista de clubes para mostrar participantes atualizados
+                this.reset();
+        });
+
+        document.getElementById('clube-select').addEventListener('change', renderParticipantes);
+
+        // Inicialização
+        renderClubes();
+        renderClubesSelect();
+        renderParticipantes();
+</script>
+<br><br>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <img src="imagens/logo.svg" alt="Logo LIDE" class="footer-logo">
+      <p>Projeto LIDE — Livro, Diálogo e Educação</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contato</h4>
+      <p>Email: <a href="mailto:contato@lide.com">projetolide@contato.com</a></p>
+      <p>Telefone: (81) 99999-0000</p>
+      <p>Instagram: <a href="https://instagram.com/projetolide" target="_blank">@projetolide</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Projeto LIDE. Todos os direitos reservados.</p>
+  </div>
+</footer>
+</html>
