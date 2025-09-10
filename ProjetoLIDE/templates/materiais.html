@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto LIDE - Clube de Leitura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+    header {
+      background-color: #33658a;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 60px;
+      margin-right: 10px;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    nav a {
+      background-color: #f6ae2d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #33658a;
+      font-weight: 700;
+    }
+
+    nav a:hover{
+    color: #f8fdf8;
+    transform: scale(1.1);
+    transition: all 0.45s ease;
+}
+
+a:hover{
+    color: #2f4858;
+    transition: 0.3s all;
+}
+
+
+    .btn-sobre {
+      background-color: #f6ae2d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #33658a;
+      font-weight: 700;
+    }
+
+    .btn-grupo{
+      background-color: #f6ae2d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #33658a;
+      font-weight: 700;
+    }
+
+    .hero {
+      background-color: #33658a;
+      padding: 50px 20px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #f6ae2d;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .content h2 {
+      color: #33658a;
+      margin-top: 30px;
+    }
+    .content ul {
+      padding-left: 20px;
+    }
+    .highlight {
+      background:#f6ae2d;
+      border-left: 5px solid #33658a;
+      padding: 15px;
+      margin-top: 30px;
+      font-weight: 700;
+      color: #33658a;
+    }
+    .img-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .img-row img {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+     <img src="{{ url_for('static', filename='imagens/logo.svg') }}" alt="Logo" style="height: 70px;">
+      <h1 style="color:white; font-size: 25px; margin: 0;">Livro, Diálogo e Educação</h1>
+    </div>
+   <nav>
+      <a href="index.html">Início</a>
+      <a class="btn-sobre" href="pagina2.html">Sobre Nós</a>
+      <a href="pagina3.html">Indicações</a>
+      <a href="./materiais.html">Materiais</a>
+      <a class="btn-grupo" href="pagina5.html">Monte Seu Clube de Leitura</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+    <h1>Materiais Exclusivos para Seu Clube!</h1>
+        <p>
+          Crie seu próprio clube de leitura com amigos, colegas ou quem mais quiser entrar nessa jornada literária com você. É rápido, fácil e gratuito!
+        </p>
+      </div>
+    </section>
+
+    <section>
+  <div class="form-container"; id="saiba_mais">
+    <form method="post" class="form" action="/inscrever">
+      <h2>Inscreva-se como Professor ou Mentor</h2>
+      <p class="mensagem">
+        Preencha esse formulário para cadastrar-se como pessoa interessada nos materias do 
+        Projeto LIDE. Entraremos em contato por e-mail.</p>
+
+      <label for="primeiro_nome">Primeiro Nome:</label>
+      <input type="text" id="primeiro_nome" name="primeiro_nome" placeholder="Ex: Lisandra">
+
+      <label for="ultimo_nome">Último Nome:</label>
+      <input type="text" id="ultimo_nome" name="ultimo_nome" placeholder="Ex: Oliveira">
+
+      <label for="e-mail">Email:</label>
+      <input type="email" id="email" name="email" placeholder="seu@email.com">
+
+      <label for="cidade">Cidade:</label>
+      <input type="text" id="cidade" name="cidade" placeholder="Ex: Jaboatão dos Guararapes">
+
+    <label for="estado">Estado:</label><br><br>
+    <select class="form" id="estado" name="estado" required>
+      <option value="">Clique Aqui</option>
+      <option value="AC">Acre</option>
+      <option value="AL">Alagoas</option>
+      <option value="AP">Amapá</option>
+      <option value="AM">Amazonas</option>
+      <option value="BA">Bahia</option>
+      <option value="CE">Ceará</option>
+      <option value="DF">Distrito Federal</option>
+      <option value="ES">Espírito Santo</option>
+      <option value="GO">Goiás</option>
+      <option value="MA">Maranhão</option>
+      <option value="MT">Mato Grosso</option>
+      <option value="MS">Mato Grosso do Sul</option>
+      <option value="MG">Minas Gerais</option>
+      <option value="PA">Pará</option>
+      <option value="PB">Paraíba</option>
+      <option value="PR">Paraná</option>
+      <option value="PE">Pernambuco</option>
+      <option value="PI">Piauí</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="RN">Rio Grande do Norte</option>
+      <option value="RS">Rio Grande do Sul</option>
+      <option value="RO">Rondônia</option>
+      <option value="RR">Roraima</option>
+      <option value="SC">Santa Catarina</option>
+      <option value="SP">São Paulo</option>
+      <option value="SE">Sergipe</option>
+      <option value="TO">Tocantins</option>
+    </select>
+
+      <label for="acao">O que você deseja?</label>
+      <select id="acao" name="acao" required>
+        <option value="inscrever">Quero receber os materiais</option>
+        <option value="cancelar">Quero cancelar minha inscrição</option>
+      </select>
+
+    <br><br>
+    <button type="submit">Enviar inscrição</button>
+  </form>
+
+    <form method="post" action="inscrever_escola" class="form">
+      <h2>Inscreva sua Escola ou Instituição</h2>
+      <p class="mensagem">
+        Preencha esse formulário para cadastrar-se como escola ou instituição 
+        interessada nos materias do Projeto LIDE. 
+        Entraremos em contato via email e telefone.</p>
+      
+        <label for="nome-escola">Nome da Escola / Instituição:</label>
+        <input type="text" id="nome-escola" name="nome-escola" placeholder="Ex: EREM Augusto Severo">
+        
+        <label for="email-escola">Email:</label>
+        <input type="email" id="email-escola" name="email-escola" placeholder="contato@escola.com">
+
+        <label for="telefone-escola">Telefone:</label>
+        <input type="tel" id="telefone-escola" name="telefone-escola" placeholder="(81) 99999-9999">
+
+
+        <label for="cidade-escola">Cidade:</label>
+        <input type="text" id="cidade-escola" name="cidade-escola" placeholder="Ex: Recife">
+
+            <label for="estado-escola">Estado:</label><br><br>
+    <select class="form" id="estado-escola" name="estado-escola" required>
+      <option value="">Clique Aqui</option>
+      <option value="AC">Acre</option>
+      <option value="AL">Alagoas</option>
+      <option value="AP">Amapá</option>
+      <option value="AM">Amazonas</option>
+      <option value="BA">Bahia</option>
+      <option value="CE">Ceará</option>
+      <option value="DF">Distrito Federal</option>
+      <option value="ES">Espírito Santo</option>
+      <option value="GO">Goiás</option>
+      <option value="MA">Maranhão</option>
+      <option value="MT">Mato Grosso</option>
+      <option value="MS">Mato Grosso do Sul</option>
+      <option value="MG">Minas Gerais</option>
+      <option value="PA">Pará</option>
+      <option value="PB">Paraíba</option>
+      <option value="PR">Paraná</option>
+      <option value="PE">Pernambuco</option>
+      <option value="PI">Piauí</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="RN">Rio Grande do Norte</option>
+      <option value="RS">Rio Grande do Sul</option>
+      <option value="RO">Rondônia</option>
+      <option value="RR">Roraima</option>
+      <option value="SC">Santa Catarina</option>
+      <option value="SP">São Paulo</option>
+      <option value="SE">Sergipe</option>
+      <option value="TO">Tocantins</option>
+    </select>
+
+     
+      <label for="acao">O que você deseja?</label>
+      <select id="acao" name="acao" required>
+        <option value="inscrever">Quero receber os materiais</option>
+        <option value="cancelar">Quero cancelar minha inscrição</option>
+      </select>
+      <br><br>
+        <button type="submit">Enviar inscrição</button>
+
+
+    </form>
+
+  </div>
+</section>
+
+  </main>
+</body>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <img src="imagens/logo.svg" alt="Logo LIDE" class="footer-logo">
+      <p>Projeto LIDE — Livro, Diálogo e Educação</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contato</h4>
+      <p>Email: <a href="mailto:contato@lide.com">projetolide@contato.com</a></p>
+      <p>Telefone: (81) 99999-0000</p>
+      <p>Instagram: <a href="https://instagram.com/projetolide" target="_blank">@projetolide</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Projeto LIDE. Todos os direitos reservados.</p>
+  </div>
+</footer>
+</html>

@@ -1,0 +1,123 @@
+body::before {
+  content: "✔️ CSS CARREGADO!";
+  display: block;
+  color: green;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.form .mensagem {
+  background-color: #f4ebfa;
+  border-left: 5px solid #4a197a;
+  padding: 0.8rem;
+  font-size: 15px;
+  margin-bottom: 1rem;
+  color: #333;
+  border-radius: 4px;
+}
+
+.form-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+  background-color: #f9f9f9;
+  flex-wrap: wrap; /*(responsividade)*/
+}
+
+.form {
+  background-color: #3c1361;  
+  border: 3px solid #f9d71c;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 48%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.form:hover {
+  transform: scale(1.02);
+}
+
+.form h2 {
+  margin-bottom: 1rem;
+  color: #f9d71c;
+}
+
+.form .mensagem {
+  background-color: rgba(249, 215, 28, 0.15);
+  border-left: 5px solid #f9d71c;
+  padding: 0.8rem;
+  font-size: 15px;
+  margin-bottom: 1rem;
+  color: white;
+  border-radius: 5px;
+}
+
+.form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #ffe847;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1.5px solid #f9d71c;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  background-color: #4e2589;
+  color: white;
+  transition: border-color 0.4s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #d8c93c;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #fff94f;
+  outline: none;
+  background-color: #5c2c9b;
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 80px;
+  color: white;
+}
+
+.form button {
+  margin-top: 1.5rem;
+  background-color: #f9d71c;
+  color: #3c1361;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background-color 0.45s ease, color 0.45s ease,
+              transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.form button:hover {
+  background-color: #d4b800;
+  color: #3c1361;
+  transform: scale(1.06);
+  box-shadow: o 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsividade: 1 em cima do outro */
+@media (max-width: 700px) {
+  .form {width: 100%;}
+}
