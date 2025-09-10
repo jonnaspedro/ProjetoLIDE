@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto LIDE - Clube de Leitura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+    header {
+      background-color: #28527A;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 60px;
+      margin-right: 10px;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    nav a {
+      background-color: #f6ae2d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #28527A;
+      font-weight: 700;
+    }
+
+    nav a:hover{
+    color: #f8fdf8;
+    transform: scale(1.1);
+    transition: all 0.45s ease;
+}
+
+a:hover{
+    color: #28527A;
+    transition: 0.3s all;
+}
+
+
+    .btn-sobre {
+      background-color: #f6ae2d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #28527A;
+      font-weight: 700;
+    }
+
+    .btn-grupo{
+      background-color: #f6ae2d;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #28527A;
+      font-weight: 700;
+    }
+
+    .hero {
+      background-color: #28527A;
+      padding: 50px 20px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #f6ae2d;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .content h2 {
+      color: #28527A;
+      margin-top: 30px;
+    }
+    .content ul {
+      padding-left: 20px;
+    }
+    .highlight {
+      background: linear-gradient(to right, #28527A, #f6ae2d);
+      border-left: 5px solid #28527A;
+      padding: 15px;
+      margin-top: 30px;
+      font-weight: 700;
+      color: #28527A;
+    }
+    .img-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .img-row img {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="imagens/logo.svg" alt="Logo" style="height: 70px;">
+      <h1 style="color:white; font-size: 25px; margin: 0;">Livro, Diálogo e Educação</h1>
+    </div>
+  <nav>
+      <a href="index.html">Início</a>
+      <a class="btn-sobre" href="pagina2.html">Sobre Nós</a>
+      <a href="pagina3.html">Indicações</a>
+      <a href="materiais.html">Materiais</a>
+      <a class="btn-grupo" href="pagina5.html">Monte Seu Clube de Leitura</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="texto" style="text-align: center;"></div>
+        <h1>Monte seu Clube de Leitura!</h1>
+        <p>
+        Reúna amigos, colegas ou interessados e forme seu próprio clube 
+        de leitura. Participe dessa experiência literária de forma simples e divertida!
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .container-clube-leitura {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin: 50px auto 30px auto;
+      max-width: 1000px;
+    }
+    .coluna {
+      background: #f8f9fa;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(40, 82, 122, 0.08);
+      padding: 28px 22px 22px 22px;
+      flex: 1 1 200px;
+      min-width: 200px;
+      max-width: 220px;
+      margin: 0 8px;
+      transition: box-shadow 0.3s;
+    }
+    .coluna:hover {
+      box-shadow: 0 4px 24px rgba(40, 82, 122, 0.16);
+    }
+    .coluna h2 {
+      color: #28527A;
+      font-size: 20px;
+      margin-bottom: 12px;
+      text-align: center;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .coluna ul {
+      padding-left: 16px;
+      color: #444;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .container-clube-leitura {
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      }
+      .coluna {
+      max-width: 95vw;
+      width: 100%;
+      }
+    }
+    .clube-desc {
+      font-size: 17px;
+      margin-bottom: 16px;
+      color: #555;
+      line-height: 1.5;
+      font-family: 'Nunito', Arial, sans-serif;
+      text-align: justify;
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+      background: #f6f7fa;
+      border-radius: 12px;
+      padding: 14px 18px;
+      box-shadow: 0 1px 6px rgba(40, 82, 122, 0.06);
+    }
+    .clube-actions {
+      max-width: 350px;
+      margin: 30px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .clube-action-btn {
+      display: block;
+      width: 100%;
+      background-color: #28527A;
+      color: #ffcf3f;
+      padding: 12px 0;
+      font-size: 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.3s, color 0.3s;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(40, 82, 122, 0.08);
+      margin-bottom: 4px;
+    }
+    .clube-action-btn:hover {
+      background: #f6ae2d;
+      color: #28527A;
+    }
+    .clube-action-desc {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    </style>
+
+    <div class="container-clube-leitura">
+    <div class="coluna">
+      <h2>Identidade do Clube</h2>
+      <ul>
+      <li>Nome do clube</li>
+      <li>Logo (opcional)</li>
+      <li>Frase de apresentação do clube</li>
+      </ul>
+    </div>
+    <div class="coluna">
+      <h2>Perfil do Clube</h2>
+      <ul>
+      <li>Tipo de clube: grupo de amigos, turma escolar, online aberto, familiar, professores & alunos, outro</li>
+      <li>Faixa etária dos participantes: crianças, adolescentes, jovens, adultos</li>
+      <li>Forma de encontro: presencial, online, híbrido</li>
+      <li>Frequência dos encontros: semanal, quinzenal, mensal</li>
+      <li>Duração média dos encontros: 30 min, 1 hora, 1h30, livre</li>
+      </ul>
+    </div>
+    <div class="coluna">
+      <h2>Preferências de Leitura</h2>
+      <ul>
+      <li>Gêneros literários favoritos: fantasia, romance, mistério, aventura, terror, clássicos, biografias, mangás/quadrinhos, não-ficção, outro</li>
+      <li>Tipo de livro ideal: curto (até 200 páginas), médio (200 a 400 páginas), longo (400+ páginas), depende do grupo</li>
+      <li>Forma de discussão: livre, por capítulos, por temas, com perguntas orientadoras, revezando liderança</li>
+      </ul>
+    </div>
+    <div class="coluna">
+      <h2>Organização e Convite</h2>
+      <ul>
+      <li>Nome do organizador</li>
+      <li>E-mail para contato</li>
+      <li>Convidar participantes: e-mail, link de convite, QR Code</li>
+      <li>Permitir entrada por convite ou inscrição aberta</li>
+      </ul>
+    </div>
+    </div>
+
+    <div class="clube-desc">
+    Cada encontro é uma chance de conhecer novas histórias, pontos de vista e até fazer novas amizades.
+    Não importa o tamanho do seu grupo ou o tipo de livro que escolhem — o importante é começar.
+    Dê o primeiro passo e transforme a leitura em uma experiência compartilhada.
+    </div>
+
+    <div class="clube-actions">
+    <div>
+      <a href="criarclube.html" class="clube-action-btn">
+      Criar um Clube do Livro
+      </a>
+      <div class="clube-action-desc">
+      Inicie um novo clube, defina identidade, perfil e convide participantes.
+      </div>
+    </div>
+    
+    <div>
+      <a href="agenda.html" class="clube-action-btn">
+      Agenda
+      </a>
+      <div class="clube-action-desc">
+      Organize datas, encontros e atividades do clube.
+      </div>
+    </div>
+    </div>
+
+
+<br>
+</body>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <img src="imagens/logo.svg" alt="Logo LIDE" class="footer-logo">
+      <p>Projeto LIDE — Livro, Diálogo e Educação</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contato</h4>
+      <p>Email: <a href="mailto:contato@lide.com">projetolide@contato.com</a></p>
+      <p>Telefone: (81) 99999-0000</p>
+      <p>Instagram: <a href="https://instagram.com/projetolide" target="_blank">@projetolide</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Projeto LIDE. Todos os direitos reservados.</p>
+  </div>
+</footer>
+</html>
